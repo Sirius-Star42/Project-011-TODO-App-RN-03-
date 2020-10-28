@@ -21,6 +21,11 @@ const main = StyleSheet.create({
         fontSize: 25,
         color: '#ff9b31',
     },
+    listempty: {
+        color: 'white',
+        fontSize: 18,
+        textAlign: "center",
+    }
 })
 
 const todo_input = StyleSheet.create({
