@@ -12,12 +12,10 @@ const ToDoInput = (props) => {
                 placeholder="Type something to do..."
                 onChangeText={value =>setText(value)}
                 />
-
             </View>
             <TouchableOpacity 
                 style={todo_input.buttonContainer}
-                onPress={() => props.ontodoEnter(text)}
-            
+                onPress={() => props.ontodoEnter(text)}  
             >
                 <Text style={todo_input.buttonText}>ADD TODO</Text>
             </TouchableOpacity>

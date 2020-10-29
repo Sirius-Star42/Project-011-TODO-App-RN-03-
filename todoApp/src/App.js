@@ -14,9 +14,7 @@ const App = () => {
       isDone: false
     }
 
-    const newArray = [element, ...list];
-    // newArray.push(element);
-    
+    const newArray = [element, ...list];  
     setList(newArray);
     
   };
@@ -24,9 +22,7 @@ const App = () => {
   function doneTodo(todoId) {
     const newArray = [...list];
     const todoIndex = newArray.findIndex(item => item.id == todoId);
-
     newArray[todoIndex].isDone = !newArray[todoIndex].isDone;
-
     setList(newArray);
   }
 
@@ -35,9 +31,8 @@ const App = () => {
     const todoIndex = list.findIndex(t => t.id == todoId);
     newArray.splice(todoIndex, 1);
     setList(newArray);
-
-
   }
+
   const renderTodo = ({item}) => {
      return (
       <TodoCard 
@@ -50,24 +45,22 @@ const App = () => {
 
   return (
     <SafeAreaView style={main.container}>
-      
       <KeyboardAvoidingView style={main.container}>
         <ImageBackground source={require('./images/backimg.jpg')} style={main.backimg}>
-        <View style={main.banner}>
+          <View style={main.banner}>
         
-          <Text style={main.todoText}>TODO List</Text>
-          <Text style={main.todoCount}>{list.filter(t => t.isDone === false).length}</Text>
-        </View>
-        <FlatList
-          data={list}
-          renderItem={renderTodo}
-          keyExtractor={(item, index) =>index.toString()}
-          ListEmptyComponent= {() => <Text style={main.listempty}>Nothing to do... </Text>}
-          
-        />
-        <ToDoInput
-          ontodoEnter={todoText => addTodo(todoText)}
-        />
+            <Text style={main.todoText}>TODO List</Text>
+            <Text style={main.todoCount}>{list.filter(t => t.isDone === false).length}</Text>
+          </View>
+          <FlatList
+            data={list}
+            renderItem={renderTodo}
+            keyExtractor={(item, index) =>index.toString()}
+            ListEmptyComponent= {() => <Text style={main.listempty}>Nothing to do... </Text>}
+          />
+          <ToDoInput
+            ontodoEnter={todoText => addTodo(todoText)}
+          />
         </ImageBackground>
       </KeyboardAvoidingView>
     </SafeAreaView>
