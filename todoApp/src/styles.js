@@ -4,27 +4,49 @@ import {Dimensions, StyleSheet} from 'react-native';
 const main = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#303e45',
+        justifyContent: "space-between",
+    
+        
     },
     banner: {
         flexDirection: "row",
         justifyContent: "space-between",
-        padding: 10,
+        padding: 5,
         alignItems: "center",
+        borderWidth: 2,
+        margin: 3,
+        borderRadius: 5,
+        backgroundColor: '#512da8',
+        borderColor: 'white'
+        
+       
     },
     todoText: {
+        
         fontSize: 50,
         fontWeight: "bold",
-        color: '#ff9b31',
+        color: 'white',
+        
     },
     todoCount: {
         fontSize: 25,
-        color: '#ff9b31',
+        color: 'white',
+        fontWeight: "bold",
+        
+        
     },
     listempty: {
-        color: 'white',
+        color: 'black',
         fontSize: 18,
         textAlign: "center",
+        
+    },
+    backimg: {
+        width: Dimensions.get('window').width,
+        height: Dimensions.get('window').height,
+        flex: 1,
+        resizeMode: "contain",
+
     }
 })
 
@@ -34,6 +56,7 @@ const todo_input = StyleSheet.create({
         padding: 5,
         margin: 10,
         borderRadius: 10,
+        
     },
     container: {
         backgroundColor: '#a7b6bd',
